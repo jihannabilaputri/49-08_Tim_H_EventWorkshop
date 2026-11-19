@@ -35,7 +35,7 @@
 
   <div class="aksi-form">
     <a href="{{ route('peserta.create') }}" class="btn">+ Tambah Peserta</a>
-    <a href="{{ url('/') }}" class="btn">Kembali ke Halaman Utama</a>
+    <a href="{{ url('/') }}" class="btn">Menu Utama</a>
   </div>
 </div>
 @endsection
