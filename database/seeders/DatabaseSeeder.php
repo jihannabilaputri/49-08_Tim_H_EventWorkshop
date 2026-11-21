@@ -15,11 +15,27 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
-        // User::factory(10)->create();
+        // Seeder hanya jalan di lokal / testing
+        if (! app()->environment(['local', 'testing'])) {
+            return;
+        }
 
-        User::factory()->create([
-            'name' => 'Test User',
-            'email' => 'test@example.com',
-        ]);
+        User::updateOrCreate(
+            ['email' => env('SEED_ADMIN_EMAIL', 'admin@event.test')],
+            [
+                'name' => env('SEED_ADMIN_NAME', 'Admin'),
+                'password' => env('SEED_ADMIN_PASSWORD', 'admin12345'),
+                'role' => User::ROLE_ADMIN,
+            ]
+        );
+
+        User::updateOrCreate(
+            ['email' => env('SEED_USER_EMAIL', 'user@event.test')],
+            [
+                'name' => env('SEED_USER_NAME', 'User Biasa'),
+                'password' => env('SEED_USER_PASSWORD', 'user12345'),
+                'role' => User::ROLE_USER,
+            ]
+        );
     }
 }

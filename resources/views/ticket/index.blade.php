@@ -48,7 +48,7 @@
 
   <div class="aksi-form">
     <a href="{{ route('ticket.create') }}" class="btn">+ Tambah Tiket</a>
-    <a href="{{ url('/') }}" class="btn">Kembali ke Halaman Utama</a>
+    <a href="{{ url('/') }}" class="btn">Menu Utama</a>
   </div>
 </div>
 @endsection

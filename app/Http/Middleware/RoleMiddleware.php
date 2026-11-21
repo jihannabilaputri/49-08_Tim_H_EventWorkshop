@@ -11,7 +11,7 @@ use Symfony\Component\HttpFoundation\Response;
  *
  * Contoh pemakaian di route:
  *   ->middleware('role:admin')
- *   ->middleware('role:admin,petugas')
+ *   ->middleware('role:admin,user')
  */
 class RoleMiddleware
 {
